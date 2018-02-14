@@ -5,6 +5,8 @@ Bollegala, Hayashi, Kawarabayashi.
 [Learning Linear Transformations between Counting-based and Prediction-based Word Embeddings.](http://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0184544&type=printable)
 PLoS ONE 12(9): e0184544, 2017. 
 
+Unfortunately, the original code is dirty, so I decided to show the core recipe of our learning algorithm. 
+
 ## Recipe
 Let `u_i` be the `m`-dimensional embedding vector and `v_i` be the `n`-dimensional embedding vector for word `i`. The core idea is to learn `C`, the `m` by `n` matrix that transforms `v_i` to `u_i` such that `u_i ~= Cv_i`. For this purpose, we define the objective function over `p` words as `\sum_{i=1}^p ||u_i - Cv_i||^2 = ||U-VC||^2_F`, where `U` and `V` are collections of embeddings over `p` words and `||.||_F` denotes the Frobenius norm. 
 
